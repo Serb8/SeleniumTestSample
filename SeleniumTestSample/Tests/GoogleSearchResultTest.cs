@@ -16,9 +16,9 @@ namespace SeleniumTestSample.Tests
 		public void Test()
 		{
 			var googleSearchPage = new GooglePageEl(Driver);
-			googleSearchPage.SubmitSearchQuery("transperfect");
+			googleSearchPage.SubmitSearchQuery("trygfonden");
 			Assert.IsTrue(googleSearchPage
-				.CheckIfFirstSearchResultIsCorrect("TransPerfect Translations is a translation services company based in New York City."));
+				.CheckIfFirstSearchResultIsCorrect("TrygFonden vil skabe tryghed i Danmark."));
 		}
 	}
 }

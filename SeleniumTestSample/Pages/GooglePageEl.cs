@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using OpenQA.Selenium;
 
 namespace SeleniumTestSample.Pages
@@ -25,14 +26,7 @@ namespace SeleniumTestSample.Pages
 
 		public bool CheckIfFirstSearchResultIsCorrect(string expectedSearchResult)
 		{
-			foreach (var element in SearchResult)
-			{
-				if (element.Text.Contains(expectedSearchResult))
-				{
-					return true;
-				}
-			}
-			return false;
+			return SearchResult.Any(element => element.Text.Contains(expectedSearchResult));
 		}
 
 		public string GetPageTitle()
